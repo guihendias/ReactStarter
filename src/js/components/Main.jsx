@@ -4,12 +4,14 @@ import {test} from '../actions/actionTest';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Starter from '../screens/Starter';
 
-class StarterComponent extends Component {
+class MainComponent extends Component {
   componentDidMount() {
-    this.props.test(null);
+    this.props.test({test: 'Some value'});
   }
 
   render() {
+    console.log(this.props.testValue);
+    
     return (
       <div>
         <Router>
@@ -23,7 +25,7 @@ class StarterComponent extends Component {
 }
 
 function mapStateToProps(state) {
-  return {test: state.testReducer}
+  return {testValue: state.testReducer}
 }
 
-export default connect(null, {test})(StarterComponent);
+export default connect(mapStateToProps, {test})(MainComponent);

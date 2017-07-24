@@ -6,7 +6,7 @@ const initialState = {};
 const handlers = {
   [ACTION]: (state, action) => {
     console.log(action.type, ": Handling it!");
-    return state;
+    return action.payload;
   }
 };
 
