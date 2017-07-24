@@ -1,3 +1,5 @@
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
 module.exports = {
   entry: ['./src/js/index.jsx'],
   output: {
@@ -6,7 +8,6 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-
     loaders: [
       {
         exclude: /node_modules/,
@@ -26,5 +27,14 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+   new BrowserSyncPlugin({
+     // browse to http://localhost:3000/ during development,
+     // ./public directory is being served
+     host: 'localhost',
+     port: 3000,
+     proxy: 'http://localhost:8080/'
+   })
+ ]
 };
