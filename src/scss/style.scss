@@ -1,26 +1,22 @@
-#container {
-  .starter-class {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
 
-    span {
-      font-family: sans-serif;
-      font-size: 4em;
-    }
+.starter-class {
+  @extend .centered;
+  height: 80vh;
+
+  span {
+    font-size: 4em;
   }
 }
 
 .sub-info {
+  @extend .centered;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   margin-top: -40vh;
-
-  span {
-    font-family: sans-serif;
-  }
 }

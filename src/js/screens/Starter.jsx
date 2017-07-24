@@ -6,7 +6,7 @@ const Starter = () => (
       <span>React Starter</span>
     </div>
     <div className="sub-info">
-      <span>Start your <strong>awesome</strong> project now!</span>
+      <p>Start your <strong>awesome</strong> project now!</p>
     </div>
   </div>
 );
